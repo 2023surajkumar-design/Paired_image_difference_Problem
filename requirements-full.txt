@@ -1,0 +1,13 @@
+# Full main-kernel stack: pip install -r requirements-full.txt   (after torch + core)
+-r requirements-core.txt
+kornia>=0.7.3                                          # LoFTR + LightGlue dependency
+lightglue @ git+https://github.com/cvg/LightGlue.git   # record the commit: pip show -f lightglue / pip freeze
+easyocr==1.7.2
+bitsandbytes>=0.45                                     # only needed when vlm_4bit=True (Windows wheels exist >=0.45)
+
+# Experimental, install only if you enable use_anychange (may pull its own pins; use a venv copy if it conflicts):
+#   pip install torchange
+#   SAM ViT-H weights -> checkpoints/sam_vit_h_4b8939.pth
+#   https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+
+# M3Diff is NOT installed here: it pins torch 2.2.2 / transformers 4.40.0. See scripts/setup_m3diff_env.sh.
