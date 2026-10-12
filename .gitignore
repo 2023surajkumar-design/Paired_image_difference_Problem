@@ -6,3 +6,8 @@ outputs/
 checkpoints/
 third_party/
 environment_report.json
+.venv/
+demo_run/
+eval_suite/
+real_unseen_tests/
+real_test_pairs/
